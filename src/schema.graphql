@@ -1,0 +1,26 @@
+# GraphQL Yoga API Example
+# TODO: DELETE AND CREATE YOUR OWN API!
+
+# Types
+type Post {
+  id: ID!
+  title: String!
+  text: String!
+}
+
+# Input Types
+type PostInput {
+  id: ID!
+  title: String!
+  text: String!
+}
+
+# Querys
+type Query {
+  posts: [Post]!
+}
+
+# Mutations
+type Mutation {
+  createPost(postInput: PostInput!): Post!
+}

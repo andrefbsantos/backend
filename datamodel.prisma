@@ -1,0 +1,26 @@
+type Beer {
+  id: ID! @unique
+  type: String!
+  brewery: String!
+  name: String!
+  description: String!
+  hops: [Hops]!
+  grains: [Grain]!
+  abv: Float!
+  ibu: Float
+  ebc: Float
+}
+
+type Hops {
+  id: ID! @unique
+  name: String! @unique
+  alphaAcids: Float!
+  description: String!
+}
+
+type Grain {
+  id: ID! @unique
+  name: String! @unique
+  ebc: Float!
+  description: String!
+}

@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "FCT workshop - GraphQL backend",
+  "main": "index.js",
+  "author": "Joel Reis",
+  "license": "ISC",
+  "scripts": {
+    "start": "nodemon -e js,graphql -x node src/index.js",
+    "deploy": "prisma deploy --env-file variables.env",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "graphql-yoga": "^1.17.4",
+    "prisma-client-lib": "^1.28.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
