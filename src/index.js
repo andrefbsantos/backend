@@ -20,7 +20,7 @@ const server = new GraphQLServer({
 
 // You can add options to your server, check the GraphQL-Yoga API
 const options = {
-  port: process.env.PORT,
+  port: process.env.PORT || 4000,
   endpoint: '/graphql',
   playground: '/playground',
 }
