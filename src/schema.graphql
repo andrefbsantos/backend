@@ -9,7 +9,7 @@ type Post {
 }
 
 # Input Types
-type PostInput {
+input CreatePostInput {
   id: ID!
   title: String!
   text: String!
@@ -22,5 +22,5 @@ type Query {
 
 # Mutations
 type Mutation {
-  createPost(postInput: PostInput!): Post!
+  createPost(data: CreatePostInput!): Post!
 }
