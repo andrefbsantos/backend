@@ -2,25 +2,75 @@
 # TODO: DELETE AND CREATE YOUR OWN API!
 
 # Types
-type Post {
+
+type Beer {
   id: ID!
-  title: String!
-  text: String!
+  type: String!
+  brewery: String!
+  name: String!
+  description: String!
+  hops: [Hops]!
+  grains: [Grain]!
+  abv: Float!
+  ibu: Float
+  ebc: Float
+}
+
+type Hops {
+  id: ID!
+  name: String!
+  alphaAcids: Float!
+  description: String!
+}
+
+type Grain {
+  id: ID!
+  name: String!
+  ebc: Float!
+  description: String!
 }
 
 # Input Types
-input CreatePostInput {
+input CreateGrainInput {
+  name: String!
+  ebc: Float!
+  description: String!
+}
+
+input UpdateGrainInput {
+  name: String!
+  ebc: Float!
+  description: String!
+}
+
+input CreateHopsInput {
+  name: String!
+  alphaAcids: Float!
+  description: String!
+}
+
+input UpdateHopsInput {
+  name: String
+  alphaAcids: Float
+  description: String
+}
+
+input HopWhereUniqueInput {
   id: ID!
-  title: String!
-  text: String!
 }
 
 # Querys
 type Query {
-  posts: [Post]!
+  grains: [Grain]!
+  hops(where: HopWhereUniqueInput!): Hops!
+  hopses: [Hops]!
+  beers: [Beer]!
 }
 
 # Mutations
 type Mutation {
-  createPost(data: CreatePostInput!): Post!
+  createGrain(data: CreateGrainInput!): Grain!
+  updateGrain(data: UpdateGrainInput!): Grain!
+  createHops(data: CreateHopsInput!): Hops!
+  updateHops(data: UpdateHopsInput!, where: HopWhereUniqueInput!): Hops!
 }
