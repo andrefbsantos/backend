@@ -1,5 +1,5 @@
 type Beer {
-  id: ID! @unique
+  id: ID! @unique @id
   type: String!
   brewery: String!
   name: String!
@@ -12,14 +12,14 @@ type Beer {
 }
 
 type Hops {
-  id: ID! @unique
+  id: ID! @unique @id
   name: String! @unique
   alphaAcids: Float!
   description: String!
 }
 
 type Grain {
-  id: ID! @unique
+  id: ID! @unique @id
   name: String! @unique
   ebc: Float!
   description: String!
