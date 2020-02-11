@@ -8,6 +8,13 @@ type Grain {
   description: String!
 }
 
+type Hops {
+  id: ID!
+  name: String!
+  alphaAcids: Float!
+  description: String!
+}
+
 # Input Types
 input CreatePostInput {
   id: ID!
@@ -17,10 +24,12 @@ input CreatePostInput {
 
 # Querys
 type Query {
+  hopses: [Hops]!
   grains: [Grain]!
 }
 
 # Mutations
 type Mutation {
+  createHops(): Hops!
   createGrain(name: String!, ebc: Float!, description: String!): Grain!
 }
