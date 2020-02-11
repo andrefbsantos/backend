@@ -4,7 +4,7 @@ type Beer {
   brewery: String!
   name: String!
   description: String!
-  hops: [Hops]!
+  hopses: [Hops]!
   grains: [Grain]!
   abv: Float!
   ibu: Float
