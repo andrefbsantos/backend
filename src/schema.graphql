@@ -1,11 +1,11 @@
 # GraphQL Yoga API Example
-# TODO: DELETE AND CREATE YOUR OWN API!
 
 # Types
-type Post {
+type Grain {
   id: ID!
-  title: String!
-  text: String!
+  name: String!
+  ebc: Float!
+  description: String!
 }
 
 # Input Types
@@ -17,10 +17,10 @@ input CreatePostInput {
 
 # Querys
 type Query {
-  posts: [Post]!
+  grains: [Grain]!
 }
 
 # Mutations
 type Mutation {
-  createPost(data: CreatePostInput!): Post!
+  createGrain(name: String!, ebc: Float!, description: String!): Grain!
 }
