@@ -8,8 +8,8 @@ type Beer {
   brewery: String!
   name: String!
   description: String!
-  hopses: [Hops]!
-  grains: [Grain]!
+  hopses: [Hops]
+  grains: [Grain]
   abv: Float!
   ibu: Float
   ebc: Float
@@ -54,6 +54,8 @@ type Mutation {
     abv: Float!
     ibu: Float
     ebc: Float
+    grains: [String]!
+    hopses: [String]!
   ): Beer!
 
   createHops(

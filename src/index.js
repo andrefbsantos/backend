@@ -11,6 +11,18 @@ const server = new GraphQLServer({
   resolvers: {
     Query,
     Mutation,
+    Beer: {
+      grains: (root, args, context) => {
+        return context.prisma.beer({
+          id: root.id
+        }).grains()
+      },
+      hopses: (root, args, context) => {
+        return context.prisma.beer({
+          id: root.id
+        }).hopses()
+      }
+    }
   },
   context: req => ({
     ...req,
