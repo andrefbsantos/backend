@@ -1,6 +1,20 @@
 # GraphQL Yoga API Example
 
 # Types
+
+type Beer {
+  id: ID!
+  type: String!
+  brewery: String!
+  name: String!
+  description: String!
+  hopses: [Hops]!
+  grains: [Grain]!
+  abv: Float!
+  ibu: Float
+  ebc: Float
+}
+
 type Grain {
   id: ID!
   name: String!
@@ -16,20 +30,35 @@ type Hops {
 }
 
 # Input Types
-input CreatePostInput {
-  id: ID!
-  title: String!
-  text: String!
+input HopsCreateInput {
+  name: String!
+  alphaAcids: Float!
+  description: String!
 }
+
 
 # Querys
 type Query {
+  beers: [Beer]!
   hopses: [Hops]!
   grains: [Grain]!
 }
 
 # Mutations
 type Mutation {
-  createHops(): Hops!
+  createBeer(
+    type: String!
+    brewery: String!
+    name: String!
+    description: String!
+    abv: Float!
+    ibu: Float
+    ebc: Float
+  ): Beer!
+
+  createHops(
+    data: HopsCreateInput!
+  ): Hops!
+
   createGrain(name: String!, ebc: Float!, description: String!): Grain!
 }
